@@ -96,6 +96,6 @@ class genshinReviewController extends Controller
 
         $antrian->delete();
 
-        return redirect(route('list'))->with('success', 'Berhasil menghapus antrian');
+        return redirect(route('list'))->with('success', 'Hore, berhasil menghapus antrian');
     }
 }

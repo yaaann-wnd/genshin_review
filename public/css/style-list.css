@@ -61,6 +61,10 @@ body::before {
     width: 55%;
 }
 
+.paimon {
+    width: 15%;
+}
+
 .kartu-list {
     position: relative;
     z-index: 1;
@@ -83,7 +87,6 @@ body::before {
     width: 100%;
     display: grid;
     grid-template-rows: 1.5fr .5fr;
-    font-size: .8rem;
 }
 
 .genshin-data {
@@ -92,10 +95,63 @@ body::before {
     grid-template-columns: 4fr 1fr 7fr;
 }
 
+#toast-simple {
+    animation: notifikasi 5s ease-in-out forwards;
+}
+
+.chibi-modal {
+    height: 60%;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    animation: chibi-modal 5s ease infinite forwards;
+
+}
+
+@keyframes chibi-modal {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -7%);
+    }
+}
+
+.chibi {
+    height: 35%;
+    z-index: 10;
+    bottom: -2%;
+    right: 0;
+}
+
+@keyframes notifikasi {
+
+    0%,
+    100% {
+        right: -100%;
+    }
+
+    15%,
+    25%,
+    35%,
+    50%,
+    75% {
+        right: 20px;
+    }
+}
+
 @media screen and (max-width:375px) {
     *::-webkit-scrollbar {
-    width: 4px;
-}
+        width: 4px;
+    }
+
+    .paimon {
+        width: 30%;
+    }
 
     .list-antrian {
         width: 100%;
@@ -103,6 +159,12 @@ body::before {
 
     .isi {
         font-size: .6rem;
+    }
+
+    .chibi {
+        height: 25%;
+        right: -3%;
+        bottom: -2%;
     }
 }
 
@@ -114,11 +176,12 @@ body::before {
     .isi {
         font-size: .7rem;
     }
-    
+
 }
+
 @media screen and (min-width:426px) and (max-width:768px) {
     .list-antrian {
         width: 80%;
     }
-    
+
 }
