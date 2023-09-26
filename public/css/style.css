@@ -1,0 +1,263 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.596);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    position: relative;
+}
+
+.chibi {
+    position: absolute;
+    top: 1%;
+    left: calc(100% / 2.105);
+    transform: translateX(-50%);
+    height: 20%;
+    animation: chibi 5s ease infinite forwards;
+    z-index: -1;
+}
+
+@keyframes chibi {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 7%);
+    }
+}
+
+.chibi-2 {
+    position: absolute;
+    top: 2%;
+    left: calc(100% / 1.85);
+    transform: translateX(-50%);
+    height: 17%;
+    z-index: -2;
+    animation: chibi-2 6s ease infinite forwards;
+}
+
+@keyframes chibi-2 {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 7%);
+    }
+}
+
+.form-wrapper {
+    width: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+.form-wrapper::before {
+    content: '';
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 3px);
+    height: calc(100% + 3px);
+    position: absolute;
+    background: linear-gradient(-45deg, #38bdf8, rgba(55, 65, 81, 1), #38bdf8);
+    border-radius: .5rem;
+}
+
+#form-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.error {
+    font-size: .7rem;
+    bottom: -17px;
+}
+
+.gambar {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+.paimon {
+    height: 40%;
+    z-index: 3;
+    bottom: 0;
+    right: -5%;
+    animation: paimon 10s ease infinite forwards;
+}
+
+#toast-simple {
+    animation: notifikasi 3s ease-in-out forwards;
+}
+
+@keyframes notifikasi {
+    0%, 100% {
+        right: -100%;
+    }
+
+    15%, 25%, 35%, 50%, 75% {
+        right: 20px;
+    }
+}
+
+@keyframes paimon {
+
+    0%,
+    100% {
+        transform: translateY(5px);
+    }
+
+    50% {
+        transform: translateY(-1px);
+    }
+}
+
+.credit {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color: #dbeafe;
+    opacity: .5;
+}
+
+.credit p:first-child {
+    font-size: .8rem;
+}
+
+.credit p:nth-of-type(2) {
+    font-size: .7rem;
+}
+
+/* @media screen and (max-width:360px) {
+    .chibi {
+        top: 5%;
+        height: 15%;
+        left: calc(100% / 2.5);
+
+    }
+
+    .chibi-2 {
+        top: 10px;
+        height: 13%;
+        left: calc(100% / 1.7);
+
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+
+    #form-wrapper {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .paimon {
+        height: 25%;
+        bottom: 0%;
+        right: -15%;
+    }
+
+    .credit {
+        align-items: start;
+    }
+
+    .credit p:first-child {
+        font-size: .5rem;
+    }
+
+    .credit p:nth-of-type(2) {
+        font-size: .4rem;
+    }
+} */
+
+@media screen and (max-width:700px) {
+
+    .chibi {
+        top: 40px;
+        height: 15%;
+        left: calc(100% / 2.5);
+
+    }
+
+    .chibi-2 {
+        top: 45px;
+        height: 13%;
+        left: calc(100% / 1.7);
+
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+
+    #form-wrapper {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .gambar {
+        display: none;
+    }
+
+    .paimon {
+        height: 30%;
+        bottom: 0%;
+        right: -15%;
+    }
+
+    .credit {
+        align-items: start;
+    }
+
+    .credit p:first-child {
+        font-size: .5rem;
+    }
+
+    .credit p:nth-of-type(2) {
+        font-size: .4rem;
+    }
+
+    .pesan {
+        font-size: .8rem;
+    }
+
+}
+
+@media screen and (min-width:700px) and (max-width:768px) {
+    
+    
+    .form-wrapper {
+        width: 95%;
+    }
+
+    .paimon {
+        bottom: 0;
+        right: -5%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1030px) {
+    
+    .form-wrapper {
+        width: 80%;
+    }
+}
