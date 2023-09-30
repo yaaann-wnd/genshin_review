@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\genshinReviewController;
+use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,4 @@ Route::get('/', function () {
 
 Route::resource('waiting_list', genshinReviewController::class);
 Route::get('list', [genshinReviewController::class, 'tampil_list'])->name('list');
+Route::get('who-are-you', [loginController::class, 'login'])->name('login');
