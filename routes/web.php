@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\genshinReviewController;
+use App\Http\Controllers\kunciController;
 use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,13 @@ Route::get('/', function () {
     return redirect('waiting_list');
 });
 
+
+
+Route::get('who-are-you', [kunciController::class, 'login'])->name('login');
+Route::post('kunci_proses', [kunciController::class, 'kunci_proses'])->name('login.proses');
+
 Route::resource('waiting_list', genshinReviewController::class);
+
 Route::get('list', [genshinReviewController::class, 'tampil_list'])->name('list');
-Route::get('who-are-you', [loginController::class, 'login'])->name('login');
+// Route::middleware(['auth:kunci'])->group(function () {
+// });

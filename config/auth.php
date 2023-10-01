@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'kunci' => [
+            'driver' => 'session',
+            'provider' => 'kunci',
+        ],
     ],
 
     /*
@@ -63,6 +68,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'kunci' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Kunci::class,
         ],
 
         // 'users' => [
@@ -94,6 +103,12 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'kunci' => [
+            'provider' => 'kunci',
+            'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
         ],

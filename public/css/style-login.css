@@ -22,6 +22,20 @@ body::before {
     max-width: 60%;
 }
 
-.curious {
-    max-width: 45%;
+#toast-simple {
+    animation: notifikasi 3s ease-in-out forwards;
+}
+
+#toast-simple2 {
+    animation: notifikasi 3s ease-in-out forwards;
+}
+
+@keyframes notifikasi {
+    0%, 100% {
+        left: -100%;
+    }
+
+    15%, 25%, 35%, 50%, 75% {
+        left: 20px;
+    }
 }

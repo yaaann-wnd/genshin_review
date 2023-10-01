@@ -26,7 +26,7 @@
             @endif
             @foreach ($list as $item)
                 <div class="kartu-list w-full md:max-w-2xl">
-                    <a href="#" class="block w-full p-3 md:p-6 rounded-lg shadow bg-gray-800 border-gray-700">
+                    <a href="#" class="block w-full p-3 md:p-6 rounded-lg shadow bg-sky-950">
                         <div class="isi gap-3">
                             <div class="genshin-data">
                                 <div class="field flex flex-col gap-3">
